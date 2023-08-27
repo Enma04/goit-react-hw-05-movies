@@ -1,4 +1,5 @@
 import { allMovies } from "resources/moviesData";
+import '../index.css';
 
 export const App = () => {
 
@@ -7,16 +8,7 @@ export const App = () => {
     .catch(err => console.log("Incoming", err))
 
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+    <div className="container">
       React homework template
     </div>
   );
