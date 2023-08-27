@@ -17,9 +17,17 @@ code {
 .container {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  gap: 10px;
+  font-size: 30px;
   color: #ffffff;
   background-color: rgb(38, 38, 101);
+}
+
+.link {
+  color: #ffffff;
+  font-size: 20px;
+  margin-right: 23px;
 }
