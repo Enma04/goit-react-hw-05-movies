@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 
-export const MovieDetails = () => {
+export const NotFound = () => {
   return(
     <div>
       <nav className="barraNav">
         <Link className="link" to='/' > Home </Link>
-        <Link className="link" to='/movies' > Movies </Link>
       </nav>
-      <span>Estoy en Movie Details</span>
+      <span>Ups algo salió mal, Error 404!</span>
     </div>
   );
 }

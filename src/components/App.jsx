@@ -1,5 +1,5 @@
 import { allMovies } from "resources/moviesData";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import '../index.css';
 
 //-----------------------------------
@@ -7,6 +7,7 @@ import '../index.css';
 import { Home } from "./Home/Home";
 import { Movies } from "./Movies/Movies";
 import { MovieDetails } from "./MovieDetails/MovieDetails";
+import { NotFound } from "./NotFound/NotFound";
 
 //-----------------------------------
 //------- App
@@ -18,15 +19,11 @@ export const App = () => {
   return (
     <div className="container">
       React homework template
-      <nav className="barraNav">
-        <Link className="link" to='/' > Home </Link>
-        <Link className="link" to='/movies' > Movies </Link>
-        <Link className="link" to='/movie-details' > Movie Details </Link>
-      </nav>
       <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="/movies" element={ <Movies /> } />
-        <Route path="/movie-details" element={ <MovieDetails /> } />
+        <Route path="/movies/:movieId" element={ <MovieDetails /> } />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
