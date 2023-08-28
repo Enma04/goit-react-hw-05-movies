@@ -15,7 +15,7 @@ export const MovieDetails = () => {
       setMovie(data);
     }
     newMovie();
-  }, []);
+  }, [id]);
 
   return(
     <div className="movieCard">

@@ -1,4 +1,3 @@
-import { allMovies } from "resources/moviesData";
 import { Routes, Route, Link } from "react-router-dom";
 import '../index.css';
 
