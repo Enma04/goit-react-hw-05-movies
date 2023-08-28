@@ -70,3 +70,10 @@ code {
   text-align: justify;
   font-size: 18px;
 }
+
+.otherDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 24px;
+}

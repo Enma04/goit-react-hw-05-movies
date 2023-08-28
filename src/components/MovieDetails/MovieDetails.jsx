@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { getMovie } from "resources/moviesData";
 
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
@@ -26,6 +26,15 @@ export const MovieDetails = () => {
         alt="Aqui va una imagen"
         className="imgMovie"
       />
+      <ul className="otherDetails">
+        <li>
+          <Link to="cast" > Cast </Link>
+        </li>
+        <li>
+          <Link to="reviews"> Reviews </Link>
+        </li>
+      </ul>
+      <Outlet />
     </div>
   );
 }
