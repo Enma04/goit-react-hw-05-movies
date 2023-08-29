@@ -1,7 +1,34 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { allMovies } from "resources/moviesData";
+
 export const Home = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect( () => {
+    async function fetchMovies() {
+      try {
+        const data = await allMovies();
+        setMovies(data.results);
+      }
+      catch (error) {
+        console.log("Ups!", error);
+      }
+    }
+    fetchMovies();
+  }, []);
+  
   return(
     <div>
-      <span>Estoy en el Home</span>
+      <ul>
+        { movies.map( movie => (
+            <li key={movie.id} className="movie" >
+              <Link to={`/movies/${movie.id}`}>
+                { movie.title ? movie.title : movie.name }
+              </Link>
+            </li>
+        ))}
+      </ul>
     </div>
   );
 }
