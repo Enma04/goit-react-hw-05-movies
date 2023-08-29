@@ -3,10 +3,10 @@ import '../index.css';
 
 //-----------------------------------
 //------- Components
-import { Home } from "./Home/Home";
-import { Movies } from "./Movies/Movies";
-import { MovieDetails } from "./MovieDetails/MovieDetails";
-import { NotFound } from "./NotFound/NotFound";
+import { Home } from "../pages/Home";
+import { Movies } from "../pages/Movies";
+import { MovieDetails } from "../pages/MovieDetails";
+import { NotFound } from "../pages/NotFound";
 import { Cast } from "./Cast/Cast";
 import { Reviews } from "./Reviews/Reviews";
 
