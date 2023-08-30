@@ -23,7 +23,7 @@ export const Cast = () => {
         <li key={person.id} className={css.card}>
           <img
             src={`${imageBaseURL}${person.profile_path}`}
-            alt="Not Photo"
+            alt="Not found"
             className={css.imagen}
           />
           <span className={css.text}> Name: {person.name} </span>
