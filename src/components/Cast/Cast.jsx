@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getMovie } from "resources/moviesData";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getMovie } from 'resources/moviesData';
 import css from './Cast.module.css';
 
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 
 export const Cast = () => {
-	const { id } = useParams();
-	const [cast, setCast] = useState([]);
+  const { id } = useParams();
+  const [cast, setCast] = useState([]);
 
   useEffect(() => {
     async function newCast() {
@@ -17,20 +17,19 @@ export const Cast = () => {
     newCast();
   }, [id]);
 
-	return(
-		<ul className={css.list}>
-			{
-				cast.map((person) => (
-					<li key={person.id} className={css.card}>
-						<img src={`${imageBaseURL}${person.profile_path}`}
-								alt="Imagen"
-								className={css.imagen}
-						/>
-						<span className={css.text}> Name: {person.name} </span>
-						<span className={css.text}> Character: {person.character} </span>
-					</li>
-				))
-			}
-		</ul>
-	);
-}
+  return (
+    <ul className={css.list}>
+      {cast.map(person => (
+        <li key={person.id} className={css.card}>
+          <img
+            src={`${imageBaseURL}${person.profile_path}`}
+            alt="Not Photo"
+            className={css.imagen}
+          />
+          <span className={css.text}> Name: {person.name} </span>
+          <span className={css.text}> Character: {person.character} </span>
+        </li>
+      ))}
+    </ul>
+  );
+};

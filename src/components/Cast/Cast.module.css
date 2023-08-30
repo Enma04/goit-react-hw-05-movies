@@ -2,25 +2,28 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    max-width: 400px;
+    max-width: 470px;
     display: flex;
     flex-wrap: wrap;
-    flex-basis: calc((100% - 10px) / 3);
+    flex-basis: calc((100% - 5px) / 3);
     justify-content: center;
     gap: 20px;
 }
 
 .card {
     width: 120px;
+    padding: 6px;
     background-color: antiquewhite;
     text-align: center;
+    border-radius: 15px;
 }
 
 .imagen {
     width: 100%;
+    font-size: 18px;
+    border-radius: 15px;
 }
 
 .text {
     font-size: 15px;
-    
 }

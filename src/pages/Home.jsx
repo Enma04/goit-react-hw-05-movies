@@ -19,16 +19,17 @@ export const Home = () => {
   }, []);
   
   return(
-    <div>
-      <ul>
+    <>
+      <h4 className="titlesH4">On Demand</h4>
+      <ul className="movieNameList">
         { movies.map( movie => (
             <li key={movie.id} className="movie" >
-              <Link to={`/movies/${movie.id}`}>
+              <Link to={`/movies/${movie.id}`} className="movieLink" >
                 { movie.title ? movie.title : movie.name }
               </Link>
             </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }

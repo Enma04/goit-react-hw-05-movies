@@ -17,7 +17,7 @@ export const App = () => {
     <div className="container">
       <nav className="navBar" >
         <h3 className="titlesH3" > My Movies! </h3>
-        <div>
+        <div className="navLinks">
           <Link className="link" to='/' > Home </Link>
           <Link className="link" to='/movies' > Movies </Link>
         </div>

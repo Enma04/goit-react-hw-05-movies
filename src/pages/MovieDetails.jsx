@@ -28,10 +28,10 @@ export const MovieDetails = () => {
       />
       <ul className="otherDetails">
         <li>
-          <Link to="cast" > Cast </Link>
+          <Link to="cast" className="movieLink" > Cast </Link>
         </li>
         <li>
-          <Link to="reviews"> Reviews </Link>
+          <Link to="reviews" className="movieLink"> Reviews </Link>
         </li>
       </ul>
       <Outlet />
