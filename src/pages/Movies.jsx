@@ -1,7 +1,9 @@
 export const Movies = () => {
+  const handleSubmit = () => {}
   return(
-    <div>
-      <span>Estoy en search</span>
-    </div>
+    <form className="form" onSubmit={handleSubmit}>
+      <input className="formInput" type="text" name="username" />
+      <button className="formButton" type="submit">Search</button>
+    </form>
   );
 }

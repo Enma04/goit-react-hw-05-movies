@@ -128,3 +128,37 @@ ul {
   list-style-type: none;
   font-size: 24px;
 }
+
+
+/*
+  ------------------------
+  Movie page
+  ------------------------
+*/
+.form {
+  width: 470px;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.formInput {
+  width: 65%;
+  height: 25px;
+  margin-right: 2%;
+  border: solid 1px var(--coffe_Dark);
+  border-radius: 10px;
+}
+
+.formButton {
+  width: 70px;
+  color: var(--coffe_Dark);
+  border: none;
+  border-radius: 15px;
+  background-color: bisque;
+}
+
+.formButton:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
