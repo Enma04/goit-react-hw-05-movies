@@ -20,8 +20,8 @@ export const allMovies = () => {
     });
 }
 
-export const getMovie = (id, cast='') => {
-  return fetch(`${url}${id}${cast}?api_key=${myKeyTMDB}`).then(response => {
+export const getMovie = (id, option='') => {
+  return fetch(`${url}${id}${option}?api_key=${myKeyTMDB}`).then(response => {
     if(!response.ok) {
       throw new Error(response.status); 
     }

@@ -1,0 +1,28 @@
+.box {
+    background-color: bisque;
+    border-radius: 5px;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-bottom: 12px;
+    padding: 10px 25px;
+}
+
+.name {
+    font-size: 25px;
+}
+
+.rating {
+    font-size: 25px;
+    color: rgb(153, 94, 7);
+}
+
+.coment {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    color: black;
+}
