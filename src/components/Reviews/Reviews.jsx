@@ -5,28 +5,36 @@ import css from './Review.module.css';
 
 export const Reviews = () => {
 	const { id } = useParams();
-  const [review, setReview] = useState([]);
+	const [review, setReview] = useState([]);
 
-  useEffect(() => {
-    async function newReview() {
-      const data = await getMovie(id, '/reviews');
-      setReview(data.results);
-    }
-    newReview();
-  }, [id]);
+	useEffect(() => {
+		async function newReview() {
+			const data = await getMovie(id, '/reviews');
+			setReview(data.results);
+		}
+		newReview();
+	}, [id]);
 
 	return(
-		<ul className={css.box}>
-      {review.map(rev => (
-        <li key={rev.id} className={css.review}>
-          <span className={css.name}> Name: {rev.author} </span>
+		<>
+			{
+				review.length ?
+				<ul className={css.box}>
 					{
-						rev.author_details.rating &&
-						<span className={css.rating}> Rating: {rev.author_details.rating} </span>
+						review.map(rev => (
+							<li key={rev.id} className={css.review}>
+								<span className={css.name}> {rev.author} </span>
+								{
+									rev.author_details.rating &&
+									<span className={css.rating}> Rating: {rev.author_details.rating} </span>
+								}
+								<span className={css.coment}> {rev.content} </span>
+							</li>
+						))
 					}
-          <span className={css.coment}> {rev.content} </span>
-        </li>
-      ))}
-    </ul>
+				</ul> :
+				<h3 className='titlesH3'>It hasn't reviews</h3>
+			}
+		</>
 	);
 }
