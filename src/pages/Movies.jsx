@@ -1,24 +1,22 @@
 import { useEffect, useState } from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { searchMovie } from 'resources/moviesData';
 
 export const Movies = () => {
-  const [state, setState] = useState({ data:{}, query:'' });
+  const [state, setState] = useState({ data:[], query:'' });
 
   useEffect(() => {
-    console.log('Mi data: ', state.data);
-  }, [state.data]);
-
-  useEffect(() => {
-    console.log('Mi consulta: ', state.query);
+    console.log("Modificacion de la busqueda!");
     const handleSearch = async () => {
-      const info = await searchMovie();
+      const info = await searchMovie(state.query);
       setState(state => ({
         ...state,
         data: info.results,
       }));
     };
-    handleSearch();
+
+    if(state.query !== '') handleSearch();
+
   }, [state.query]);
 
   const handleSubmit = e => {
@@ -37,7 +35,7 @@ export const Movies = () => {
         </button>
       </form>
 
-      {/* <ul className="movieNameList">
+      <ul className="movieNameList">
         {
           state.data.map( movie => (
             <li key={movie.id} className="movie" >
@@ -47,7 +45,7 @@ export const Movies = () => {
             </li>
           ))
         }
-      </ul> */}
+      </ul>
     </>
   );
 };

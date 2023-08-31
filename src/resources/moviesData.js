@@ -48,7 +48,7 @@ export const getMovie = (id, option='') => {
   Search a movie by query
   -----------------------------------------
 */
-export const searchMovie = (query = 'batman') => {
+export const searchMovie = (query) => {
   const options = {
     method: 'GET',
     headers: {
