@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { getMovie } from "resources/moviesData";
 
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
@@ -7,11 +7,13 @@ const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 export const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
+  const location = useLocation();
 
+  console.log("Locacion: ", location);
+  
   useEffect(() => {
     async function newMovie() {
       const data = await getMovie(id);
-      //console.log("Llego la data:", data);
       setMovie(data);
     }
     newMovie();
