@@ -9,20 +9,14 @@ import { MovieDetails } from "../pages/MovieDetails";
 import { NotFound } from "../pages/NotFound";
 import { Cast } from "./Cast/Cast";
 import { Reviews } from "./Reviews/Reviews";
+import { NavBar } from "./NavBar/NavBar";
 
 //-----------------------------------
 //------- App
 export const App = () => {
   return (
     <div className="container">
-      <nav className="navBar" >
-        <h3 className="titlesH3" > My Movies! </h3>
-        <div className="navLinks">
-          <Link className="link" to='/' > Home </Link>
-          <Link className="link" to='/movies' > Movies </Link>
-        </div>
-      </nav>
-
+      <NavBar />
       <Routes>
         <Route path="/" element={ <Home/> } />
         <Route path="/goit-react-hw-05-movies" element={ <Home/> } />
