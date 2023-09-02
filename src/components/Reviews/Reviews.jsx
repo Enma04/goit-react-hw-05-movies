@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovie } from 'resources/moviesData';
 import css from './Review.module.css';
 
-export const Reviews = () => {
+export default function Reviews() {
 	const { id } = useParams();
 	const [review, setReview] = useState([]);
 

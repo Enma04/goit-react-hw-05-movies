@@ -5,7 +5,7 @@ import css from './Cast.module.css';
 
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 
-export const Cast = () => {
+export default function Cast() {
   const { id } = useParams();
   const [cast, setCast] = useState([]);
 

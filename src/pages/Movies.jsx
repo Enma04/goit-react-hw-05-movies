@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { searchMovie } from 'resources/moviesData';
 
-export const Movies = () => {
+export default function Movies() {
   const [state, setState] = useState({ data:[], query:'' });
   const location = useLocation();
 

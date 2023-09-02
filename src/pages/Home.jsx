@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { allMovies } from "resources/moviesData";
 
-export const Home = () => {
+export default function Home () {
   const [movies, setMovies] = useState([]);
   const location = useLocation();
 

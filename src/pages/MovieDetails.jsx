@@ -4,7 +4,7 @@ import { getMovie } from "resources/moviesData";
 
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 
-export const MovieDetails = () => {
+export default function MovieDetails() {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
   const location = useLocation();
