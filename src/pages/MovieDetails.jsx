@@ -21,6 +21,7 @@ export const MovieDetails = () => {
 
   return(
     <div className="movieCard">
+      <Link to={location.state.from}>Back to movies</Link>
       <h4 className="titlesH4"> { movie.title } </h4>
       <span className="text" > {movie.overview} </span>
       <img

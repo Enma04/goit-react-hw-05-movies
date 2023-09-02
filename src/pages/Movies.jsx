@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { searchMovie } from 'resources/moviesData';
 
 export const Movies = () => {
   const [state, setState] = useState({ data:[], query:'' });
+  const location = useLocation();
 
   useEffect(() => {
-    console.log("Modificacion de la busqueda!");
     const handleSearch = async () => {
       const info = await searchMovie(state.query);
       setState(state => ({
@@ -39,7 +39,7 @@ export const Movies = () => {
         {
           state.data.map( movie => (
             <li key={movie.id} className="movie" >
-              <Link to={`/movies/${movie.id}`} className="movieLink" >
+              <Link to={`/movies/${movie.id}`} state={{ from: location }} className="movieLink" >
                 { movie.title ? movie.title : movie.name }
               </Link>
             </li>

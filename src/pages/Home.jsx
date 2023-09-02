@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { allMovies } from "resources/moviesData";
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
+  const location = useLocation();
 
   useEffect( () => {
     async function fetchMovies() {
@@ -24,7 +25,7 @@ export const Home = () => {
       <ul className="movieNameList">
         { movies.map( movie => (
             <li key={movie.id} className="movie" >
-              <Link to={`/movies/${movie.id}`} className="movieLink" >
+              <Link to={`/movies/${movie.id}`} state={{ from: location }} className="movieLink" >
                 { movie.title ? movie.title : movie.name }
               </Link>
             </li>
