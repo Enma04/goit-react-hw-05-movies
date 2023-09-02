@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { getMovie } from "resources/moviesData";
 
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
