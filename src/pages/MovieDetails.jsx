@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import { getMovie } from "resources/moviesData";
 
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
@@ -8,8 +8,7 @@ export const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
   const location = useLocation();
-
-  console.log("Locacion: ", location);
+  const backLink = location.state?.from ?? "/";
   
   useEffect(() => {
     async function newMovie() {
@@ -21,7 +20,9 @@ export const MovieDetails = () => {
 
   return(
     <div className="movieCard">
-      <Link to={location.state.from}>Back to movies</Link>
+      <div className="goBack">
+        <Link to={backLink}>Go back</Link>
+      </div>
       <h4 className="titlesH4"> { movie.title } </h4>
       <span className="text" > {movie.overview} </span>
       <img

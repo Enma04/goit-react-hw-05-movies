@@ -112,6 +112,23 @@ ul {
   margin-bottom: 100px;
 }
 
+.goBack {
+  width: 80px;
+  padding: 0.5% 0.1%;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 50%;
+  border-radius: 15px;
+  align-self: first baseline;
+  background-color: var(--coffe_Dark);
+}
+
+.goBack > a {
+  text-decoration: none;
+  color: bisque;
+  
+}
+
 .imgMovie {
   width: 100%;
 }
